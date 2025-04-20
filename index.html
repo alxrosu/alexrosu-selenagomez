@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Alexandru Ionut Rosu">
+  <meta name="description" content="Web sobre Selena Gomez y su discografía.">
+  <meta name="keywords" content="Selena Gomez, música, discografía, Stars Dance, Revival, Rare, I Said I Love You First">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selena Gomez - Inicios en la Música</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Paper+Cut&display=swap');
+    body {
+      background-color: lightpink;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .links-section {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .links-section a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      border: 4px solid #333;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 0.9rem;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 4px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    .links-section a:hover {
+      background-color: rgba(255,255,255,1);
+      transform: translateY(-2px);
+    }
+    h1 {
+      font-family: 'Paper Cut', cursive;
+      margin: 20px 0;
+    }
+    #inicio {
+      padding: 40px 20px;
+    }
+    .imagen-principal {
+      width: 50%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .albums-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .album-card {
+      background: rgba(255,255,255,0.8);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .album-card:hover {
+      transform: scale(1.02);
+    }
+    .album-card img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .buy-button {
+      background-color: #ff9aa2;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .buy-button:hover {
+      background-color: #ff7f8f;
+    }
+    .info-table {
+      width: 80%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.8);
+      border: 4px solid #333;
+      font-size: 0.95rem;
+    }
+    .info-table th,
+    .info-table td {
+      border: 2px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    .info-table th {
+      background-color: rgba(255,255,255,1);
+      font-weight: bold;
+    }
+    .back-to-top {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .back-to-top:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <section class="links-section">
+      <a href="form.html">Q&amp;A</a>
+      <a href="https://www.youtube.com/selenagomez" target="_blank">MUSIC</a>
+      <a href="https://www.instagram.com/selenagomez/" target="_blank">SOCIAL</a>
+      <a href="https://store.selenagomez.com" target="_blank">SHOP</a>
+    </section>
+  </header>
+  <main>
+    <section id="inicio">
+      <h1>Selena Gomez: Los Inicios</h1>
+      <p>¿Eres fan de Selena Gomez? Consigue sus álbumes con un descuento exclusivo en esta página. Clica en el álbum que desees y te llevará a un contenido único sobre el mismo. ¡No te lo pierdas!</p>
+      <img src="imagenes/selena_inicio.jpg" alt="Selena Gomez en sus inicios" class="imagen-principal">
+    </section>
+    <section class="albums-section">
+      <h2>Álbumes Destacados</h2>
+      <div class="albums-grid">
+        <div class="album-card">
+          <a href="album_stars_dance.html"><img src="imagenes/stars_dance.jpg" alt="Stars Dance"></a>
+          <p class="price">6,99€</p>
+          <button class="buy-button" onclick="addToCart()">Comprar</button>
+        </div>
+        <div class="album-card">
+          <a href="album_revival.html"><img src="imagenes/revival.jpg" alt="Revival"></a>
+          <p class="price">4,99€</p>
+          <button class="buy-button" onclick="addToCart()">Comprar</button>
+        </div>
+        <div class="album-card">
+          <a href="album_rare.html"><img src="imagenes/rare.jpg" alt="Rare"></a>
+          <p class="price">7,99€</p>
+          <button class="buy-button" onclick="addToCart()">Comprar</button>
+        </div>
+        <div class="album-card">
+          <a href="album_i_said_i_love_you_first.html"><img src="imagenes/i_said_i_love_you_first.jpg" alt="I Said I Love You First"></a>
+          <p class="price">10,99€</p>
+          <button class="buy-button" onclick="addToCart()">Comprar</button>
+        </div>
+      </div>
+      <table class="info-table">
+        <tr>
+          <th colspan="3">Resumen Rápido de Discos</th>
+        </tr>
+        <tr>
+          <td rowspan="2">Stars Dance</td>
+          <td>Precio</td>
+          <td>6,99€</td>
+        </tr>
+        <tr>
+          <td>Release</td>
+          <td>19 Jul 2013</td>
+        </tr>
+        <tr>
+          <td>Revival</td>
+          <td colspan="2">4,99€ — 9 Oct 2015</td>
+        </tr>
+        <tr>
+          <td>Rare</td>
+          <td colspan="2">7,99€ — 10 Ene 2020</td>
+        </tr>
+        <tr>
+          <td>I Said I Love You First</td>
+          <td colspan="2">10,99€ — 20 Feb 2025</td>
+        </tr>
+      </table>
+      <a href="#inicio" class="back-to-top">Arriba</a>
+    </section>
+  </main>
+  <script>
+    function addToCart() {
+      alert("Artículo agregado al carrito");
+    }
+  </script>
+</body>
+</html>
+

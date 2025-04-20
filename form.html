@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Alexandru Ionut Rosu">
+  <meta name="description" content="Formulario Q&A para Selena Gomez.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&amp;A - Selena Gomez</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      position: relative;
+      background: url('imagenes/wallpaper.jpg') repeat;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .home-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 8px 12px;
+      background-color: rgba(255,255,255,0.8);
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .home-button:hover {
+      background-color: rgba(255,255,255,1);
+    }
+    form {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      box-sizing: border-box;
+      margin: 40px 0;
+    }
+    form h1 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    form label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+    form input[type="radio"],
+    form input[type="checkbox"] {
+      width: auto;
+      margin-right: 6px;
+    }
+    .inline {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    form button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 48%;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .submit {
+      background-color: #6a0dad;
+      color: white;
+    }
+    .reset {
+      background-color: #ccc;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Inicio</a>
+  <form action="submit_qa.html" method="post" enctype="multipart/form-data">
+    <h1>Q&amp;A Selena Gomez</h1>
+    <label>Nombre completo:
+      <input type="text" name="nombre" maxlength="50" size="30" required>
+    </label>
+    <label>Correo electrónico:
+      <input type="email" name="email" maxlength="100" required>
+    </label>
+    <label>Edad:
+      <input type="number" name="edad" min="1" max="120" step="1" required>
+    </label>
+    <label>Contraseña:
+      <input type="password" name="password" maxlength="20" required>
+    </label>
+    <label>Selección de categoría:
+      <select name="categoria" required>
+        <option value="">--Elige una--</option>
+        <option>General</option>
+        <option>Conciertos</option>
+        <option>Música</option>
+        <option>Colaboraciones</option>
+        <option>Otro</option>
+      </select>
+    </label>
+    <label>Fecha y hora de tu consulta:
+      <input type="datetime-local" name="fecha_hora" required>
+    </label>
+    <div class="inline">
+      <label>Preferencia de respuesta:</label>
+      <label><input type="radio" name="respuesta" value="email" required>Email</label>
+      <label><input type="radio" name="respuesta" value="teléfono">Teléfono</label>
+    </div>
+    <div class="inline">
+      <label>Temas de interés:</label>
+      <label><input type="checkbox" name="tema" value="música">Música</label>
+      <label><input type="checkbox" name="tema" value="actuación">Actuación</label>
+      <label><input type="checkbox" name="tema" value="vida">Vida</label>
+    </div>
+    <label>¿Cómo nos conociste?
+      <input type="url" name="referencia" placeholder="https://">
+    </label>
+    <label>Selecciona tu mes favorito de su carrera:
+      <input type="month" name="mes">
+    </label>
+    <label>Hora ideal para contacto:
+      <input type="time" name="hora">
+    </label>
+    <label>Color favorito de carátula:
+      <input type="color" name="color">
+    </label>
+    <label>Adjunta un archivo (opcional):
+      <input type="file" name="archivo">
+    </label>
+    <label>Cuéntanos tu pregunta:
+      <textarea name="pregunta" rows="5" cols="40" maxlength="500" required></textarea>
+    </label>
+    <button type="submit" class="submit">Enviar</button>
+    <button type="reset" class="reset">Borrar</button>
+  </form>
+</body>
+</html>
